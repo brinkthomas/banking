@@ -1,3 +1,4 @@
+import { Control, FieldValues } from "react-hook-form";
 /* eslint-disable no-unused-vars */
 
 declare type SearchParamProps = {
@@ -8,14 +9,14 @@ declare type SearchParamProps = {
 // ========================================
 
 declare type SignUpParams = {
-  firstName: string;
-  lastName: string;
-  address1: string;
-  city: string;
-  state: string;
-  postalCode: string;
-  dateOfBirth: string;
-  ssn: string;
+  firstName?: string;
+  lastName?: string;
+  address1?: string;
+  city?: string;
+  state?: string;
+  postalCode?: string;
+  dateOfBirth?: string;
+  ssn?: string;
   email: string;
   password: string;
 };
@@ -33,6 +34,7 @@ declare type User = {
   dwollaCustomerId: string;
   firstName: string;
   lastName: string;
+  name: string;
   address1: string;
   city: string;
   state: string;
@@ -155,6 +157,16 @@ declare interface HeaderBoxProps {
   user?: string;
 }
 
+declare interface CustomInputProps {
+  form: {
+    control: Control<FieldValues>;
+  };
+  name: string;
+  label: string;
+  placeholder?: string;
+  description?: string;
+}
+
 declare interface MobileNavProps {
   user: User;
 }
@@ -210,6 +222,7 @@ declare interface TotalBalanceBoxProps {
 
 declare interface FooterProps {
   user: User;
+  type?: "mobile" | "desktop";
 }
 
 declare interface RightSidebarProps {
